@@ -54,7 +54,12 @@ function App() {
                                 type="search"
                                 placeholder="Search for MSIX issues"
                                 value={data.slug}
-                                onChange={(e) => setData({...data, slug: e.target.value})}
+                                onChange={
+                                    (e) => {
+                                        setData({...data, slug: e.target.value});
+                                        setPage(1);
+                                    }
+                                }
                                 fullWidth
                                 label="Search"
                             />
